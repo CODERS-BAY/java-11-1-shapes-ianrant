@@ -9,5 +9,4 @@ public class DummyClass {
     public void doNotCall() throws IllegalAccessException {
         throw new IllegalAccessException("Illegal access");
     }
-
 }
