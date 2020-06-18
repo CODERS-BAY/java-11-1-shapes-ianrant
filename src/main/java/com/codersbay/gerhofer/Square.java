@@ -22,6 +22,14 @@ public class Square extends Shape {
     public double getPerimeter() {
         double perimeter = 0;
         perimeter = 4 * length;
-        return 0;
+        return perimeter;
+    }
+
+    public double getLength() {
+        return length;
+    }
+
+    public void setLength(double length) {
+        this.length = length;
     }
 }

@@ -2,7 +2,7 @@ package com.codersbay.gerhofer;
 
 public class Circle extends Shape {
 
-    private Double radius;
+    private double radius;
 
     public Circle(Double radius) {
         if (radius == null || radius <= 0) {
@@ -25,5 +25,13 @@ public class Circle extends Shape {
         double circumference = 0;
         circumference = 2 * Math.PI * radius;
         return circumference;
+    }
+
+    public Double getRadius() {
+        return radius;
+    }
+
+    public void setRadius(Double radius) {
+        this.radius = radius;
     }
 }

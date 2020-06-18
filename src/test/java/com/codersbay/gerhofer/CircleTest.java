@@ -6,37 +6,37 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class RectangleTest {
+public class CircleTest {
 
     @Test
     @DisplayName("")
     public void TestGetArea() {
-        Shape rectangle1 = new Rectangle(3.7, 2.5);
-        assertEquals(3.7 * 2.5, rectangle1.getArea());
+        Shape circle1 = new Circle(3.7);
+        assertEquals(Math.PI * Math.pow(3.7, 2), circle1.getArea());
 
-        Shape rectangle2 = new Rectangle(5.2, 4.4);
-        assertEquals(5.2 * 4.4, rectangle2.getArea());
+        Shape circle2 = new Circle(5.2);
+        assertEquals(Math.PI * Math.pow(5.2, 2), circle2.getArea());
     }
 
     @Test
     @DisplayName("")
     public void testGetPerimeter() {
-        Shape rectangle3 = new Rectangle(5.0, 2.1);
-        assertEquals((2 * 5.0 + 2 * 2.1), rectangle3.getPerimeter());
+        Shape circle3 = new Circle(5.0);
+        assertEquals(2 * Math.PI * 5.0, circle3.getPerimeter());
 
-        Shape rectangle4 = new Rectangle(2.3, 2.9);
-        assertEquals((2 * 2.3 + 2 * 2.9), rectangle4.getPerimeter());
+        Shape circle4 = new Circle(2.345);
+        assertEquals(2 * Math.PI * 2.345, circle4.getPerimeter());
     }
 
     @Test
     @DisplayName("Exception will be thrown when constructor has a value of 0")
     public void testConstructorThrowsException() {
-        assertThrows(IllegalArgumentException.class, () -> {
-            Rectangle r = new Rectangle(-2.0, -2.0);
-        });
-        assertThrows(IllegalArgumentException.class, () -> {
-            Rectangle r = new Rectangle(0.0, 0.0);
-        });
 
+        assertThrows(IllegalArgumentException.class, () -> {
+            Shape circle5 = new Circle(-2.0);
+        });
+        assertThrows(IllegalArgumentException.class, () -> {
+            Shape circle6 = new Circle(0.0);
+        });
     }
 }

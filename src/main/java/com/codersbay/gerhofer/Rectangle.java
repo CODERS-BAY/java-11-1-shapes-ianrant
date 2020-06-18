@@ -26,6 +26,22 @@ public class Rectangle extends Shape {
     public double getPerimeter() {
         double perimeter = 0;
         perimeter = (2 * width) + (2 * length);
-        return 0;
+        return perimeter;
+    }
+
+    public double getLength() {
+        return length;
+    }
+
+    public void setLength(double length) {
+        this.length = length;
+    }
+
+    public double getWidth() {
+        return width;
+    }
+
+    public void setWidth(double width) {
+        this.width = width;
     }
 }
