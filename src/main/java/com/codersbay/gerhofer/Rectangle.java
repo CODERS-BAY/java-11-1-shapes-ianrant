@@ -6,26 +6,23 @@ public class Rectangle extends Shape {
     private double width;
 
     public Rectangle(Double length, Double width) {
-
-        if (length == null || length <= 0 || width == null || width <= 0) {
+        if (length != null && width != null && length > 0 && width > 0) {
+            this.length = length;
+            this.width = width;
+        } else {
             throw new IllegalArgumentException("The values for length and/or width cannot be NULL, ZERO or NEGATIVE");
         }
-
-        this.length = length;
-        this.width = width;
     }
 
     @Override
     public double getArea() {
-        double area = 0;
-        area = length * width;
+        double area = length * width;
         return area;
     }
 
     @Override
     public double getPerimeter() {
-        double perimeter = 0;
-        perimeter = (2 * width) + (2 * length);
+        double perimeter = (2 * width) + (2 * length);
         return perimeter;
     }
 

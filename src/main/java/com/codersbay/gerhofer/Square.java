@@ -1,35 +1,19 @@
 package com.codersbay.gerhofer;
 
-public class Square extends Shape {
+public class Square extends Rectangle {
 
-    private double length;
+    /*
+        The idea is as follows:
+        The class Square extends the class Rectangle.
+        A square is a certain kind of rectangle (width and length are the same).
+        As such Square can use the getArea() and getPerimeter() methods that Rectangle also uses.
+        Hence, in the Square constructor we call the super() method which then calls the
+        Rectangle constructor and hand it the sideLength variable twice to simulate length and width
+     */
 
-    public Square(Double length) {
-        if (length == null || length <= 0) {
-            throw new IllegalArgumentException("The values for length cannot be NULL, ZERO or NEGATIVE");
-        }
-        this.length = length;
+    public Square(Double sideLength) {
+        super(sideLength, sideLength); // calls Rectangle constructor
     }
 
-    @Override
-    public double getArea() {
-        double area = 0;
-        area = length * length;
-        return area;
-    }
 
-    @Override
-    public double getPerimeter() {
-        double perimeter = 0;
-        perimeter = 4 * length;
-        return perimeter;
-    }
-
-    public double getLength() {
-        return length;
-    }
-
-    public void setLength(double length) {
-        this.length = length;
-    }
 }

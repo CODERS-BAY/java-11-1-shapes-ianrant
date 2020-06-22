@@ -1,6 +1,5 @@
 package com.codersbay.gerhofer;
 
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -9,8 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class RectangleTest {
 
     @Test
-    @DisplayName("")
-    public void TestGetArea() {
+    public void testGetArea() {
         Shape rectangle1 = new Rectangle(3.7, 2.5);
         assertEquals(3.7 * 2.5, rectangle1.getArea());
 
@@ -19,7 +17,6 @@ public class RectangleTest {
     }
 
     @Test
-    @DisplayName("")
     public void testGetPerimeter() {
         Shape rectangle3 = new Rectangle(5.0, 2.1);
         assertEquals((2 * 5.0 + 2 * 2.1), rectangle3.getPerimeter());
@@ -29,7 +26,6 @@ public class RectangleTest {
     }
 
     @Test
-    @DisplayName("Exception will be thrown when constructor has a value of 0")
     public void testConstructorThrowsException() {
         assertThrows(IllegalArgumentException.class, () -> {
             Rectangle r = new Rectangle(-2.0, -2.0);
